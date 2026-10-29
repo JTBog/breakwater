@@ -1,0 +1,17 @@
+# Godot
+game/.godot/
+game/.import/
+*.translation
+export_presets.cfg.bak
+# .NET
+bin/
+obj/
+*.user
+BenchmarkDotNet.Artifacts/
+# Outputs
+shots/
+builds/
+# Raw downloads (commit processed outputs only)
+tools/osm/raw/
+tools/fetch_assets/raw/
+*.osm.pbf

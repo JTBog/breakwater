@@ -12,8 +12,8 @@ This folder is a ready-to-start project seed for recreating *Ebbtide* as a perso
 | `docs/PROGRESS.md` | The running progress log Claude updates after every task |
 
 ## 1. Install prerequisites (on your machine)
-- **Godot 4.x, .NET edition** (latest stable) from godotengine.org. Put the binary on your PATH as `godot`, or tell Claude where it is.
-- **.NET SDK**: the version your Godot release requires (8 or newer).
+- **Godot 4.7.2, .NET edition** from godotengine.org. Put the binary on your PATH as `godot`, or set `GODOT=/path/to/binary`.
+- **.NET SDK 8 or newer** (the projects target net8.0).
 - **Python 3.11+** (for the OpenStreetMap tools later).
 - **git**. Optionally **ffmpeg**.
 - **Claude Code** (CLI, desktop or IDE extension).

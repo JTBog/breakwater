@@ -1,0 +1,26 @@
+; Engine configuration file.
+config_version=5
+
+[application]
+
+config/name="Breakwater"
+run/main_scene="res://scenes/Main.tscn"
+config/features=PackedStringArray("4.7", "C#", "Forward Plus")
+
+[autoload]
+
+Boot="*res://view/Boot.cs"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/stretch/mode="disabled"
+
+[dotnet]
+
+project/assembly_name="Breakwater"
+
+[rendering]
+
+renderer/rendering_method="forward_plus"

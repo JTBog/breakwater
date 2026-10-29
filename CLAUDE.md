@@ -17,12 +17,14 @@ Breakwater is a personal zombie-survival RTS inspired by *Ebbtide* (ProjectAlive
 - The view reads snapshots and interpolates. It never mutates sim state directly.
 
 ## Commands
-(Create these in task 0.1 and keep this section accurate.)
+All scripts are bash (macOS/Linux; use Git Bash on Windows). Set `GODOT=/path/to/godot` if the Godot **.NET** binary isn't on PATH as `godot`. Toolchain: Godot 4.7.2 .NET, .NET SDK 8 or newer (projects target net8.0).
+- `scripts/build.sh` builds every .NET project in `Breakwater.sln`.
 - `scripts/test.sh` runs `dotnet test` for `sim.tests`.
-- `scripts/bench.sh [filter]` runs BenchmarkDotNet benches. Paste key numbers into PROGRESS.md.
-- `scripts/run.sh [scenario]` launches the game.
-- `scripts/shot.sh <scenario> <camera-preset> <seconds>` launches, waits, saves `shots/<scenario>-<preset>.png` and quits.
-- `scripts/soak.sh <scenario> <hours>` runs the headless sim at max speed and reports stats and asserts.
+- `scripts/bench.sh [filter]` runs BenchmarkDotNet benches in `sim.bench`, e.g. `scripts/bench.sh '*Rng*'`. Paste key numbers into PROGRESS.md.
+- `scripts/run.sh [scenario] [camera-preset]` launches the game.
+- `scripts/shot.sh <scenario> [camera-preset] [seconds]` launches, waits, saves `shots/<scenario>-<preset>.png` and quits. It uses `xvfb-run` automatically on headless Linux, where rendering is software-only (frame rates there are meaningless).
+- `scripts/soak.sh <scenario> <calendar-hours> [seed]` runs `tools/SimRunner` headless at max speed and prints stats and the state hash.
+- Scenarios: `empty`. Camera presets: `default` (battlefield ~55°), `close`, `ops`.
 
 ## Verification
 - Sim changes need xUnit tests. Run `scripts/test.sh` before every commit.
